@@ -101,21 +101,7 @@
         result.meshes[2].rotation.x = Math.PI / 3;
     });
 
-    const cobble = new BABYLON.StandardMaterial("cobble", scene);
-    cobble.bumpTexture = new BABYLON.Texture("cobbleNormalMap.png", scene);
     
-    cobble.diffuseTexture.uScale = 5.0;
-    cobble.diffuseTexture.vScale = 5.0;
-    
-    cobble.diffuseTexture.uOffset = 1.5;
-    cobble.diffuseTexture.vOffset = 0.5;
-    
-    BABYLON.SceneLoader.ImportMeshAsync("", "./", "fuente.glb").then((result) => {
-    	result.meshes[3].position.x = 0;
-        result.meshes[3].position.y = 0;
-    	result.meshes[3].material = cobble;
-        result.meshes[3].rotation.x = Math.PI / 3;
-    });
 
 
     return scene;
