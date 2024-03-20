@@ -88,11 +88,6 @@
     groundMaterial.diffuseTexture = groundTexture;
     ground.material = groundMaterial;
 
-    BABYLON.SceneLoader.ImportMesh("", Assets.meshes.Yeti.rootUrl, Assets.meshes.Yeti.filename, scene, function(newMeshes){ 
-    newMeshes[0].scaling = new BABYLON.Vector3(0.1, 0.1, 0.1)
-    
-    });
-
     BABYLON.SceneLoader.ImportMeshAsync("", "./", "iglesia.glb").then((result) => {
     	result.meshes[1].position.x = 2;
     	const myMesh1 = scene.getMeshByName("myMesh_1");
