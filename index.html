@@ -101,7 +101,7 @@
         result.meshes[2].rotation.x = Math.PI / 3;
     });
 
-    const cobble = new BABYLON.StandardMaterial("myMaterial", scene);
+    const cobble = new BABYLON.StandardMaterial("cobble", scene);
     cobble.bumpTexture = new BABYLON.Texture("cobbleNormalMap.png", scene);
     
     cobble.diffuseTexture.uScale = 5.0;
