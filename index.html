@@ -105,7 +105,7 @@
     cobble.bumpTexture = new BABYLON.Texture("cobbleNormalMap.png", scene);
             
     BABYLON.SceneLoader.ImportMeshAsync("", "./", "fuente.glb").then((result) => {
-    	result.meshes[3].position.x = 0;
+    	result.meshes[3].position.x = 5;
         result.meshes[3].position.y = 0;
     	result.meshes[3].material = cobble;
         result.meshes[3].rotation.x = Math.PI / 3;
