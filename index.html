@@ -66,7 +66,7 @@
     var scene = new BABYLON.Scene(engine);
 
     // This creates and positions a free camera (non-mesh)
-    var camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 5, -10), scene);
+    var camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 8, 40), scene);
 
     // This targets the camera to scene origin
     camera.setTarget(BABYLON.Vector3.Zero());
@@ -81,35 +81,40 @@
     light.intensity = 0.7;
 
     // Our built-in 'ground' shape.
-    var ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 6, height: 6}, scene);
+    var ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 30, height: 30}, scene);
 
     const groundMaterial = new BABYLON.StandardMaterial("Ground Material", scene);
     let groundTexture = new BABYLON.Texture(Assets.textures.checkerboard_basecolor_png.rootUrl, scene);
     groundMaterial.diffuseTexture = groundTexture;
     ground.material = groundMaterial;
 
-    BABYLON.SceneLoader.ImportMeshAsync("", "./", "iglesia.glb").then((result) => {
-    	result.meshes[1].position.x = 10;
-    	result.meshes[1].material = roofMat;
-        result.meshes[1].rotation.x = Math.PI / 3;
+    BABYLON.SceneLoader.ImportMeshAsync("", "https://sebasee77.github.io/WebGL-Activity/", "iglesia.glb").then((result) => {
+    	result.meshes[1].position.x = -20;
+        result.meshes[1].position.z = 0;
+        result.meshes[1].position.y = 0;
+        result.meshes[1].scaling = new BABYLON.Vector3(0.08, 0.08, 0.08);
+        result.meshes[1].material = roofMat;
     });
 
-    BABYLON.SceneLoader.ImportMeshAsync("", "./", "bunny.glb").then((result) => {
-    	result.meshes[1].position.x = -2;
-        result.meshes[1].position.y = 2;
+    BABYLON.SceneLoader.ImportMeshAsync("", "https://sebasee77.github.io/WebGL-Activity/", "bunny.glb").then((result) => {
+    	result.meshes[1].position.x = 0;
+        result.meshes[1].position.y = 1;
     	result.meshes[1].material = roofMat;
-        result.meshes[1].rotation.x = Math.PI / 3;
+        
     });
 
     const cobble = new BABYLON.StandardMaterial("cobble", scene);
     cobble.bumpTexture = new BABYLON.Texture("cobbleNormalMap.png", scene);
             
-    BABYLON.SceneLoader.ImportMeshAsync("", "./", "fuente.glb").then((result) => {
-    	result.meshes[1].position.x = 0;
+    BABYLON.SceneLoader.ImportMeshAsync("", "https://sebasee77.github.io/WebGL-Activity/", "fuente.glb").then((result) => {
+    	result.meshes[1].position.x = 8;
         result.meshes[1].position.y = 0;
+        result.meshes[1].position.z = 0;
     	result.meshes[1].material = cobble;
         result.meshes[1].rotation.x = Math.PI / 3;
     });
+
+    
 
 
     return scene;
