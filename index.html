@@ -101,6 +101,9 @@
         result.meshes[2].rotation.x = Math.PI / 3;
     });
 
+    const cobble = new BABYLON.StandardMaterial("cobble", scene);
+    cobble.bumpTexture = new BABYLON.Texture("cobbleNormalMap.png", scene);
+            
     BABYLON.SceneLoader.ImportMeshAsync("", "./", "fuente.glb").then((result) => {
     	result.meshes[3].position.x = 0;
         result.meshes[3].position.y = 0;
