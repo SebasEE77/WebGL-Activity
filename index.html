@@ -94,6 +94,12 @@
         result.meshes[1].rotation.x = Math.PI / 3;
     });
 
+    BABYLON.SceneLoader.ImportMeshAsync("", "./", "bunny.glb").then((result) => {
+    	result.meshes[1].position.x = 4;
+    	result.meshes[1].material = roofMat;
+        result.meshes[1].rotation.x = Math.PI / 3;
+    });
+
 
     return scene;
 };
