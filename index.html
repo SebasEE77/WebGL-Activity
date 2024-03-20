@@ -100,8 +100,13 @@
     	result.meshes[2].material = roofMat;
         result.meshes[2].rotation.x = Math.PI / 3;
     });
-
     
+    BABYLON.SceneLoader.ImportMeshAsync("", "./", "fuente.glb").then((result) => {
+    	result.meshes[3].position.x = 0;
+        result.meshes[3].position.y = 0;
+    	result.meshes[3].material = roofMat;
+        result.meshes[3].rotation.x = Math.PI / 3;
+    });
 
 
     return scene;
