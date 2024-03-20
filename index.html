@@ -96,6 +96,7 @@
 
     BABYLON.SceneLoader.ImportMeshAsync("", "./", "bunny.glb").then((result) => {
     	result.meshes[2].position.x = -2;
+        result.meshes[2].position.y = 2;
     	result.meshes[2].material = roofMat;
         result.meshes[2].rotation.x = Math.PI / 3;
     });
